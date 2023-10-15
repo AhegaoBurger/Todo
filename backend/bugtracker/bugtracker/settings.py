@@ -39,18 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tickets',
     'rest_framework',
-    'social_django',
-    'oauth2_provider',
-    'rest_framework_social_oauth2',
+    'corsheaders',
+    # 'social_django',
+    # 'oauth2_provider',
+    # 'rest_framework_social_oauth2',
 ]
 
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',
-    'rest_framework_social_oauth2.backends.DjangoOAuth2',
-)
+# AUTHENTICATION_BACKENDS = (
+#     'social_core.backends.google.GoogleOAuth2',
+#     'rest_framework_social_oauth2.backends.DjangoOAuth2',
+# )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1060612665560-bavf4bnjtsrdu1ep6if4kssggv9ko56a.apps.googleusercontent.com'  # Google Client ID
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'  # Google Client Secret
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1060612665560-bavf4bnjtsrdu1ep6if4kssggv9ko56a.apps.googleusercontent.com'  # Google Client ID
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'  # Google Client Secret
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +61,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',    
 ]
+
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
+
+# To allow any origin
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # React default port
+# ]
 
 ROOT_URLCONF = 'bugtracker.urls'
 
