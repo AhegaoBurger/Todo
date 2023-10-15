@@ -1,0 +1,47 @@
+# Python/Django files
+*.pyc
+*.pyo
+*.swp
+*.DS_Store
+*.swo
+__pycache__/
+*.sqlite3
+
+# Django secret files
+db.sqlite3
+*.env
+client_secret_*.json
+OAuth_client_credentials
+
+# Docker files
+Dockerfile
+docker-compose.yml
+*.dockerignore
+
+# Frontend files
+frontend/bugtracker/node_modules/
+frontend/bugtracker/.env
+frontend/bugtracker/package-lock.json
+frontend/bugtracker/yarn.lock
+
+# Frontend build
+frontend/bugtracker/build/
+
+# Backend virtual environment
+myenv/
+venv/
+
+# Database
+db/init.sql
+
+# IDE folders
+.idea/
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Operating System Files
+.DS_Store
+.Thumbs.db
